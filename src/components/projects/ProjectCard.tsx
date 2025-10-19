@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 import { ExternalLink, Github, Award, Zap, Brain, Code, Globe, Trophy, Star } from 'lucide-react'
 import Image from 'next/image'
 import { Project } from '@/types'
-import { urlFor } from '@/lib/sanity'
 import { useAppStore } from '@/lib/store'
 
 interface ProjectCardProps {
@@ -147,13 +146,13 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       if (typeof project.coverImage === 'string') {
         return project.coverImage
       }
-      if (project.coverImage?.asset && project.coverImage !== undefined) {
-        return urlFor(project.coverImage).width(800).height(450).url()
-      }
+      // For Sanity image objects, we'll use the string fallback or return null
+      // since we're using hardcoded URLs now
+      return null
     } catch (error) {
       console.log('Error getting image src:', error)
+      return null
     }
-    return null
   }
 
   const getDescription = () => {
