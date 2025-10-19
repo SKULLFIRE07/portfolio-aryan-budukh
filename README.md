@@ -93,7 +93,7 @@ This project is configured for automatic deployment to GitHub Pages:
 2. **Automatic Deployment**
    - Push to `main` branch triggers GitHub Actions
    - Static files are automatically built and deployed
-   - Available at: `https://skullfire07.github.io/[repository-name]`
+   - Available at: `https://skullfire07.github.io/portfolio-aryan-budukh`
 
 ### Vercel (Alternative)
 
