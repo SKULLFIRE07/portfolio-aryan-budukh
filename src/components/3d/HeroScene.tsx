@@ -354,6 +354,19 @@ export function HeroScene() {
             <a
               href="/resume.pdf"
               download="Aryan_Budukh_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                // Ensure the download works by creating a proper link
+                if (e.currentTarget.href) {
+                  const link = document.createElement('a')
+                  link.href = '/resume.pdf'
+                  link.download = 'Aryan_Budukh_Resume.pdf'
+                  document.body.appendChild(link)
+                  link.click()
+                  document.body.removeChild(link)
+                }
+              }}
               className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold rounded-full hover:from-green-600 hover:to-emerald-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center space-x-2 cursor-pointer relative z-20"
             >
               <span>📄 Resume</span>

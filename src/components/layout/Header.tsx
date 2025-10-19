@@ -92,6 +92,8 @@ export function Header() {
                   <motion.a
                     href="/resume.pdf"
                     download="Aryan_Budukh_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: navItems.length * 0.1 }}
