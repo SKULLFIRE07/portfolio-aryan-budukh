@@ -6,6 +6,15 @@ const nextConfig = {
   output: isExport ? 'export' : undefined,
   trailingSlash: true,
   distDir: isExport ? 'dist' : '.next',
+  experimental: {
+    serverComponentsExternalPackages: [],
+  },
+  // Disable server actions for static export
+  ...(isExport && {
+    serverActions: {
+      allowedOrigins: [],
+    },
+  }),
   images: {
     domains: ['cdn.sanity.io', 'images.unsplash.com'],
     formats: ['image/webp', 'image/avif'],
